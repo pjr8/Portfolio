@@ -35,6 +35,7 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         ::-webkit-scrollbar {
             width: 8px;
@@ -84,7 +85,52 @@
             transition: color 0.3s ease;
         }
         .gradient-border:hover .p-6 a.text-primary {
-            color: #FFFFFF; 
+            color: #FFFFFF;
+        }
+
+        /* Toggle Switch Styles */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #4B5563; /* gray-600 */
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #8B5CF6; /* primary */
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        /* Content Visibility */
+        .bio-content.hidden {
+            display: none;
         }
     </style>
 </head>
@@ -164,12 +210,29 @@
                     </div>
                 </div>
                 <div class="animate-slide-up" style="animation-delay: 0.2s;">
-                    <h3 class="text-2xl font-bold mb-4">Who I Am</h3>
-                    <p class="text-gray-400 mb-6">
-                        I'm a passionate developer with a passion for creating clean, efficient, and user-friendly applications. 
-                        With a background in computer science and several years of programming experience, I've developed a deep 
-                        understanding of modern development practices and technologies.
-                    </p>
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-2xl font-bold">Who I Am</h3>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-sm font-medium text-gray-400" id="toggle-label-professional">Professional</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="bioToggle">
+                                <span class="slider"></span>
+                            </label>
+                            <span class="text-sm font-medium text-primary" id="toggle-label-personal">Personal</span>
+                        </div>
+                    </div>
+
+                    <div id="professional-content" class="bio-content">
+                        <p class="text-gray-400 mb-6">
+                            I'm a passionate developer focused on creating clean, efficient, and user-friendly applications. My journey in programming began in middle school, where I explored software development through hobby projects. Over the years, that curiosity grew into a lasting interest, which I’ve continued to nurture through both independent work and formal education. Now, as a full-time computer science student, I’m building on that foundation with a deeper understanding of modern technologies, development practices, and problem-solving approaches. I’m committed to writing well-structured code and developing applications that not only work well but are enjoyable to use.
+                        </p>
+                    </div>
+                    <div id="personal-content" class="bio-content hidden">
+                         <p class="text-gray-400 mb-6">
+                            Let's get rid of this profession talk and AI perfected speak for a minute. Listen, I absolutely love spending time with friends and family. I go out all the time, as much as possible. I'm always visiting NYC or Boston, trying to experience new restaurants or activities. I play indie games, like Crosscode or Soul's Remnant (very good btw), as well as games like League of Legends and Marvel Rivals. I like listening to those "3 AM coding playlists" or honestly, the Minecraft OST. Feel free to email me or add me on discord to chat, I love meeting new people. If you're looking at this, I wonder how you got here. I truly hope you have a wonderful day!
+                        </p>
+                    </div>
+
                     <div class="mb-6">
                         <h4 class="text-xl font-semibold mb-2">My Skills</h4>
                         <div class="flex flex-wrap gap-2">
@@ -353,7 +416,7 @@
                         <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
                         
                         <div class="space-y-6">
-                            <div class="flex items-start">
+                            <div class="flex items-center">
                                 <div class="bg-primary/20 p-3 rounded-lg mr-4">
                                     <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -365,19 +428,17 @@
                                 </div>
                             </div>
                             
-                            <div class="flex items-start">
+                            <div class="flex items-center">
                                 <div class="bg-primary/20 p-3 rounded-lg mr-4">
-                                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                    </svg>
+                                    <i class="fab fa-discord w-6 h-6 text-primary text-xl"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-medium mb-1">Phone</h4>
-                                    <a href="tel:+1123456789" class="text-gray-400 hover:text-primary transition-colors duration-300">Omitted</a>
+                                    <h4 class="text-lg font-medium mb-1">Discord</h4>
+                                    <p class="text-gray-400">pjr8</p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-start">
+                            <div class="flex items-center">
                                 <div class="bg-primary/20 p-3 rounded-lg mr-4">
                                     <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
@@ -563,6 +624,45 @@
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return emailRegex.test(email);
             }
+        });
+    </script>
+
+    <!-- Bio Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleSwitch = document.getElementById('bioToggle');
+            const professionalContent = document.getElementById('professional-content');
+            const personalContent = document.getElementById('personal-content');
+            const labelProfessional = document.getElementById('toggle-label-professional');
+            const labelPersonal = document.getElementById('toggle-label-personal');
+
+            // Initial state check (optional, could be done with CSS)
+            if (toggleSwitch.checked) {
+                professionalContent.classList.add('hidden');
+                personalContent.classList.remove('hidden');
+                labelProfessional.classList.remove('text-primary');
+                labelProfessional.classList.add('text-gray-400');
+                labelPersonal.classList.add('text-primary');
+                labelPersonal.classList.remove('text-gray-400');
+            } else {
+                 labelProfessional.classList.add('text-primary'); // Default is Professional
+                 labelProfessional.classList.remove('text-gray-400');
+                 labelPersonal.classList.remove('text-primary');
+                 labelPersonal.classList.add('text-gray-400');
+            }
+
+
+            toggleSwitch.addEventListener('change', function() {
+                const isPersonal = this.checked;
+                professionalContent.classList.toggle('hidden', isPersonal);
+                personalContent.classList.toggle('hidden', !isPersonal);
+
+                // Update label styles
+                labelProfessional.classList.toggle('text-primary', !isPersonal);
+                labelProfessional.classList.toggle('text-gray-400', isPersonal);
+                labelPersonal.classList.toggle('text-primary', isPersonal);
+                labelPersonal.classList.toggle('text-gray-400', !isPersonal);
+            });
         });
     </script>
 </body>

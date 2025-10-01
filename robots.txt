@@ -1,0 +1,37 @@
+# Robots.txt for paulrobinson.dev
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://paulrobinson.dev/sitemap.xml
+
+# Block access to any private or admin areas (if they exist in the future)
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /

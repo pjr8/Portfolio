@@ -9,19 +9,21 @@
     <meta property="og:title" content="Paul Robinson - Portfolio">
     <meta property="og:description" content="Developer specializing in Java and AI applications. Explore my projects and get in touch.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://paulrobinson.dev">
-    <meta property="og:image" content="https://paulrobinson.dev/og-image.jpg">
+    <meta property="og:url" content="https://www.pauljrobinsonjr.com">
+    <meta property="og:image" content="https://www.pauljrobinsonjr.com/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Paul Robinson - Portfolio">
     <meta name="twitter:description" content="Developer specializing in Java and AI applications">
-    <meta name="twitter:image" content="https://paulrobinson.dev/og-image.jpg">
-    <link rel="canonical" href="https://paulrobinson.dev">
+    <meta name="twitter:image" content="https://www.pauljrobinsonjr.com/og-image.jpg">
+    <link rel="canonical" href="https://www.pauljrobinsonjr.com">
     <title>Paul Robinson - Portfolio</title>
     
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#8B5CF6">
     <link rel="apple-touch-icon" href="/icon-192x192.png">
+    <link rel="icon" href="/icon-192x192.png" sizes="192x192" type="image/png">
+    <link rel="icon" href="/icon-512x512.png" sizes="512x512" type="image/png">
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -33,6 +35,8 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -40,7 +44,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Paul Robinson",
-        "url": "https://paulrobinson.dev",
+        "url": "https://www.pauljrobinsonjr.com",
         "email": "paulrson321@gmail.com",
         "jobTitle": "Software Developer",
         "description": "Developer specializing in Java and AI applications",
@@ -453,7 +457,7 @@
                 </div>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-controls="mobileMenu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -626,7 +630,7 @@
                             <span class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Spring Boot</span>
                             <span class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">REST API</span>
                         </div>
-                        <a href="https://github.com/paulrson" target="_blank" class="text-primary hover:text-purple-700 text-sm font-medium group-hover:underline">
+                        <a href="https://github.com/paulrson" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-purple-700 text-sm font-medium group-hover:underline">
                             View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
@@ -647,7 +651,7 @@
                             <span class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Spigot API</span>
                             <span class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Plugin Dev</span>
                         </div>
-                        <a href="https://github.com/paulrson" target="_blank" class="text-primary hover:text-purple-700 text-sm font-medium group-hover:underline">
+                        <a href="https://github.com/paulrson" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-purple-700 text-sm font-medium group-hover:underline">
                             View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
@@ -668,7 +672,7 @@
                             <span class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Swing</span>
                             <span class="text-xs bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">Overlay</span>
                         </div>
-                        <a href="https://github.com/paulrson" target="_blank" class="text-primary hover:text-purple-700 text-sm font-medium group-hover:underline">
+                        <a href="https://github.com/paulrson" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-purple-700 text-sm font-medium group-hover:underline">
                             View on GitHub <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
@@ -708,7 +712,7 @@
                                 class="w-full px-6 py-3 bg-primary hover:bg-purple-700 text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg ripple morph-button magnetic-button">
                             Send Message
                         </button>
-                        <div id="formStatus" class="text-center"></div>
+                        <div id="formStatus" class="text-center" role="status" aria-live="polite"></div>
                     </form>
                 </div>
                 
@@ -751,11 +755,11 @@
                     <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
                         <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Connect with me</p>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/paulrson" target="_blank"
+                            <a href="https://github.com/paulrson" target="_blank" rel="noopener noreferrer"
                                class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                                 <i class="fab fa-github text-xl"></i>
                             </a>
-                            <a href="https://linkedin.com" target="_blank"
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
                                class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                                 <i class="fab fa-linkedin-in text-xl"></i>
                             </a>
@@ -808,6 +812,8 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            const expanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+            mobileMenuBtn.setAttribute('aria-expanded', (!expanded).toString());
         });
         
         // Smooth Scrolling for Navigation Links

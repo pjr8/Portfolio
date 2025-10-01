@@ -6,7 +6,7 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://paulrobinson.dev/sitemap.xml
+Sitemap: https://www.pauljrobinsonjr.com/sitemap.xml
 
 # Block access to any private or admin areas (if they exist in the future)
 User-agent: *

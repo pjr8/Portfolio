@@ -62,7 +62,6 @@
 - **Contact Information**:
   - Email: paulrson321@gmail.com
   - Discord: pjr8
-  - Location: Connecticut, USA
 - **Social Links**: GitHub and LinkedIn profiles
 
 #### 6. Footer
